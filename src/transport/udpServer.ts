@@ -1,6 +1,6 @@
 import dgram from "node:dgram"
 import { parseHeader } from "../protocol/header"
-// import { parseQuestion } from "../protocol/question"
+import { parseQuestion } from "../protocol/question"
 
 const server = dgram.createSocket("udp4")
 
@@ -8,12 +8,12 @@ export function startUDPServer() {
 
   server.on("message", (msg, rinfo) => {
     const header = parseHeader(msg)
-    // const question = parseQuestion(msg, 12)
+    const question = parseQuestion(msg, 12)
 
     console.log("Query from", rinfo.address)
 
     console.log(header)
-    // console.log(question)
+    console.log(question)
 
   })
 
