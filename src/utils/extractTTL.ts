@@ -10,7 +10,7 @@ export function extractMinTTL(buf: Buffer): number {
 
   for (let i = 0; i < qdcount; i++) {
     offset = skipName(buf, offset);
-    offset += 4; // Skip QTYPE and QCLASS
+    offset += 4;
   }
   offset = skipName(buf, offset);
   offset += 4;
