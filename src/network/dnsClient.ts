@@ -3,7 +3,7 @@ import dgram from "node:dgram"
 export function queryDNS(
   server: string,
   packet: Buffer,
-  timeoutMs: number = 3000 // 3 second timeout
+  timeoutMs: number = 3000 
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const socket = dgram.createSocket("udp4")
